@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --site-font: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --site-text: #0f172a;
+    --site-text-muted: #475569;
+    --site-bg: #ffffff;
+    --site-surface: #f8fafc;
+    --site-primary: #1e40af;
+    --site-primary-dark: #1d3a8a;
+    --site-border: #e2e8f0;
+    --site-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+    --site-shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+    --site-card-glow-soft: rgba(14, 165, 233, 0.22);
+    --site-card-glow-strong: rgba(30, 64, 175, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--site-font);
+    color: var(--site-text);
+    background: var(--site-bg);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+p,
+li {
+    color: var(--site-text-muted);
+}
+
+header,
+.header {
+    box-shadow: var(--site-shadow-sm);
+    background: var(--site-bg);
+}
+
+.logo img {
+    border-radius: 6px;
+}
+
+.btn,
+button[type='submit'],
+input[type='submit'] {
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover,
+button[type='submit']:hover,
+input[type='submit']:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--site-shadow-md);
+}
+
+.section-title,
+h1,
+h2,
+h3,
+h4 {
+    color: var(--site-text);
+}
+
+.container,
+.container-wide,
+header nav,
+.header-content {
+    width: min(100%, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-menu a,
+.nav-links a {
+    font-weight: 600;
+}
+
+.card,
+[class*='-card']:not([class*='-card-']) {
+    transition: filter 0.28s ease;
+}
+
+@media (hover: hover) {
+    .card:hover,
+    .card:focus-within,
+    [class*='-card']:not([class*='-card-']):hover,
+    [class*='-card']:not([class*='-card-']):focus-within {
+        filter: drop-shadow(0 0 12px var(--site-card-glow-soft)) drop-shadow(0 0 24px var(--site-card-glow-strong));
+    }
+}
+
+.footer-map {
+    margin-top: 0.75rem;
+    border: 1px solid #4b5563;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111827;
+}
+
+.footer-map iframe {
+    width: 100%;
+    min-height: 180px;
+    border: 0;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    [class*='-card']:not([class*='-card-']) {
+        transition: none;
+    }
+}
